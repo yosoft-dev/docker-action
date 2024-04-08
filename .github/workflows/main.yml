@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  hola_job:
+    runs-on: ubuntu-latest
+    name: Un trabajo dice Hola
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: hola
+        with:
+          a-quien-se-salude: 'Mona el octocat'
+      # Use the output from the `hello` step
+      - name: Obtenga el tiempo de salida
+        run: echo "El tiempo fue ${{ steps.hola.outputs.tiempo }}"

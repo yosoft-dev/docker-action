@@ -1,5 +1,5 @@
 # action.yml
-name: 'Hola Mundo'
+name: 'hola'
 description: 'Saluda a alguien y registra el tiempo'
 inputs:
   a-quien-se-salude:  # id of input
