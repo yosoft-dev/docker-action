@@ -1,0 +1,16 @@
+# action.yml
+name: 'Hola Mundo'
+description: 'Saluda a alguien y registra el tiempo'
+inputs:
+  a-quien-se-salude:  # id of input
+    description: 'A quien saludar'
+    required: true
+    default: 'World'
+outputs:
+  tiempo: # id of output
+    description: 'El tiempo en el que te saludamos'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.a-quien-se-salude }}
